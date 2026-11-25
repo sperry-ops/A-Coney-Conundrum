@@ -6,15 +6,22 @@ public class HotDog {
 
       String[] topping = {"ketchup, ","mustard, ","chopped onions, ",
       "tomato wedge, ","sweet relish, ","sport peppers, ","sauerkraut, ", ""}; //"" is a placeholder for no toppings
+      double[] tprice = {0.15, 0.17, 0.20, 0.25, 0.30, 0.35, 0.45}; //Topping prices
 
       String[] pS = {"","","","","","","",""}; //"Print Selection" array
 
       int itemCount = 0; 
       pS[0]=topping[0];
+      int plength = 20;
+      int pspace = 0;
+      double totalp = 0.99;
 
       System.out.printf("A dog and Bun \n");
       itemCount=itemCount+1;   
       for (int i=1;i<128;i++) {
+         plength = 0;
+         pspace = 0;
+         totalp = 0.99;
          slct[0] = slct[0] + 1;
          for (int j=0;j<7;j++) {
             if (slct[j]==2){ //If the slct is already one, set it to zero and change the next slct to +1. (This is binary)
@@ -23,13 +30,18 @@ public class HotDog {
             }
             if (slct[j]==1){
                   pS[j]=topping[j];
+                  totalp = totalp + tprice[j];
                }
                else {
                   pS[j]=topping[7]; //Topping[7] is equivalent to no topping.
                }
+            plength = plength + pS[j].length();
+            
          }
-         System.out.printf("A dog and Bun with %s%s%s%s%s%s%s \n",
-         pS[0],pS[1],pS[2],pS[3],pS[4],pS[5],pS[6]); //Print hot dog combo. 
+         pspace = 100 - plength;
+         
+         System.out.printf("A dog and Bun with %s%s%s%s%s%s%s %"+pspace+"f \n", 
+         pS[0],pS[1],pS[2],pS[3],pS[4],pS[5],pS[6], totalp); //Print hot dog combo. 
          itemCount=itemCount+1;     
       }
       System.out.printf("Number of items on the menu: %d \n", itemCount);
