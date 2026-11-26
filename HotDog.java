@@ -4,8 +4,8 @@ public class HotDog {
       // YOUR CODE HERE
       int[] slct = {0,0,0,0,0,0,0,0}; //slct = "Selection" array
 
-      String[] topping = {"ketchup, ","mustard, ","chopped onions, ",
-      "tomato wedge, ","sweet relish, ","sport peppers, ","sauerkraut, ", ""}; //"" is a placeholder for no toppings
+      String[] topping = {"Ketchup, ","Mustard, ","Chopped Onions, ",
+      "Tomato Wedge, ","Sweet Relish, ","Sport Peppers, ","Sauerkraut, ", ""}; //"" is a placeholder for no toppings
       double[] tprice = {0.15, 0.17, 0.20, 0.25, 0.30, 0.35, 0.45}; //Topping prices
 
       String[] pS = {"","","","","","","",""}; //"Print Selection" array
@@ -13,10 +13,10 @@ public class HotDog {
       int itemCount = 0; 
       pS[0]=topping[0];
       int plength = 20;
-      int pspace = 0;
+      int pspace = 106;
       double totalp = 0.99;
 
-      System.out.printf("A dog and Bun \n");
+      System.out.printf("A Dog and Bun %"+pspace+".2f\n", totalp);
       itemCount=itemCount+1;   
       for (int i=1;i<128;i++) {
          plength = 0;
@@ -40,7 +40,7 @@ public class HotDog {
          }
          pspace = 100 - plength;
          
-         System.out.printf("A dog and Bun with %s%s%s%s%s%s%s %"+pspace+"f \n", 
+         System.out.printf("A dog and Bun with %s%s%s%s%s%s%s %"+pspace+".2f \n", 
          pS[0],pS[1],pS[2],pS[3],pS[4],pS[5],pS[6], totalp); //Print hot dog combo. 
          itemCount=itemCount+1;     
       }
